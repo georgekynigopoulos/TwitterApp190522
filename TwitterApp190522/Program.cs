@@ -23,9 +23,39 @@ namespace TwitterApp190522
             stream.AddTrack("csharp");
             stream.AddTrack("javascript");
 
+            int counter1 = 0;
+            int counter2 = 0;
+            int counter3 = 0;
+            int counter4 = 0;
+
+
             stream.MatchingTweetReceived += (sender, eventReceived) =>
             {
-                Console.WriteLine(eventReceived.Tweet);
+                string tweet = eventReceived.Tweet.FullText;
+                                
+                Console.WriteLine(tweet);
+
+                if ( tweet.Contains("java"))
+                {
+                    counter1++;
+                }
+                if ( tweet.Contains("python"))
+                {
+                    counter2++;
+                }                    
+                if ( tweet.Contains("csharp"))
+                {
+                    counter3++;
+                }
+                if ( tweet.Contains("javascript"))
+                {
+                    counter4++;
+                }
+
+
+
+
+
             };
 
             await stream.StartMatchingAnyConditionAsync();
