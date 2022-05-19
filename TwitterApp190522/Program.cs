@@ -58,7 +58,14 @@ namespace TwitterApp190522
                 }
 
 
+                Console.WriteLine(
+                    filter1 + ":" + counter1 + ", " +
+                    filter2 + ":" + counter2 + ", " +
+                    filter3 + ":" + counter3 + ", " +
+                    filter4 + ":" + counter4 
+                );
 
+                // java: 8, python: 4, csharp: 0, javascript: 5
 
 
             };
