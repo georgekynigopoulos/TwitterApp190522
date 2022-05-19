@@ -14,14 +14,19 @@ namespace TwitterApp190522
             var userCredentials = new TwitterCredentials("CONSUMER_KEY", "CONSUMER_SECRET", "ACCESS_TOKEN", "ACCESS_TOKEN_SECRET");
             var userClient = new TwitterClient(userCredentials);
 
+            string filter1 = "java";
+            string filter2 = "python";
+            string filter3 = "csharp";
+            string filter4 = "javascript";
+
 
             // Create a simple stream containing only tweets with the keyword France
 
             var stream = userClient.Streams.CreateFilteredStream();
-            stream.AddTrack("java");
-            stream.AddTrack("python");
-            stream.AddTrack("csharp");
-            stream.AddTrack("javascript");
+            stream.AddTrack(filter1);
+            stream.AddTrack(filter2);
+            stream.AddTrack(filter3);
+            stream.AddTrack(filter4);
 
             int counter1 = 0;
             int counter2 = 0;
@@ -35,19 +40,19 @@ namespace TwitterApp190522
                                 
                 Console.WriteLine(tweet);
 
-                if ( tweet.Contains("java"))
+                if ( tweet.Contains(filter1))
                 {
                     counter1++;
                 }
-                if ( tweet.Contains("python"))
+                if ( tweet.Contains(filter2))
                 {
                     counter2++;
                 }                    
-                if ( tweet.Contains("csharp"))
+                if ( tweet.Contains(filter3))
                 {
                     counter3++;
                 }
-                if ( tweet.Contains("javascript"))
+                if ( tweet.Contains(filter4))
                 {
                     counter4++;
                 }
